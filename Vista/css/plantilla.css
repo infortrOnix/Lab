@@ -1,0 +1,281 @@
+/*=============================================
+GLOBAL
+=============================================*/
+
+*{
+/*	margin:0px;*/
+	padding:0px;
+	list-style: none;
+	text-decoration: none;
+	
+}
+
+ul, ol{
+	padding:0px;
+}
+
+a:visited, a:link, a:focus, a:hover, a:active{
+	list-style: none;
+	text-decoration: none;
+}
+
+
+.backColor, .backColor a{
+	background:#1e1f1f;
+	color:white;
+}
+
+.barra #btnCategoria{
+	margin: 20px 0;
+}
+.barra #btnCategoria p{
+	line-height: 40px;
+	margin-bottom: 0px;
+}
+.barra #btnCategoria p span{
+	cursor:pointer;
+}
+.barra #buscador{
+	margin: 20px 0;
+}
+
+.barra #buscador input{
+	padding: 19px;
+	border-radius: 0;
+}
+.barra #buscador button{
+	padding: 9px;
+	border: 1px solid silver;
+	border-radius: 0;
+}
+#carrito{
+	margin-top: 12px;	
+}
+.barra #carrito button{
+	padding: 9px 15px;
+	border: 1px solid silver;
+	border-radius: 0;
+}
+.barra #carrito p{
+	padding: 2px;
+	padding-left: 60px;
+	border:1px solid #dadada;
+	font-size: 12px;
+}
+.barra #logo{
+	margin: 20px 0;
+	
+}
+.barra #categoria{
+	display: none;
+	margin-top: -10px;
+	position: relative;
+}
+.barra #categoria h4{
+	margin-top: 20px;
+	margin-bottom: -10px;
+}
+.barra #categoria hr{
+	border: 1px solid rgba(255, 255, 255, .3);
+}
+#card-carrito{
+	border: rgb(190, 188, 188) solid 1px;
+	padding: 35px;
+	border-radius: 2%;
+	width: 300px;
+	margin: 20px;
+	
+	
+}
+.img-card-producto{
+	width: 200px;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content: space-between;
+	flex-basis: 10em;
+	text-align: center;
+	padding-bottom: 15px;
+	
+	
+}
+
+.row-oferta{
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content: space-between;
+	flex-basis: 10em;
+	text-align: center;
+	padding-bottom: 15px;
+	
+	
+}
+.row-oferta img{
+	width: 150px;
+}
+
+#card-oferta{
+	border: rgb(241, 161, 10) solid 2px;
+	padding: 5px;
+	border-radius: 2%;
+	width: 220px;
+	height: 450px;
+	margin-bottom: 50px;
+	
+	
+	
+}
+
+#card-oferta h4{
+	font-size: 14px bold;
+	color: #1e1f1f;
+}
+
+.oferta{
+	background: #f0ba47;
+	border-radius: 5px;
+	
+	
+}
+
+/*Modales*/
+
+.modalTitulo{
+	padding:5px 0px;
+
+
+}
+
+.modalTitulo h3{
+	text-align:center;
+	margin-top:-5px;
+	padding: 15px 0px;
+	border-radius:5px 5px 0px 0px;
+}
+.modalForm .close{
+	position:absolute;
+	right:27px;
+	top:15px;
+	color:white;
+}
+.modal-footer p{
+	color:grey;
+	
+}
+.modal-footer h3{
+	text-align:center;
+	color:grey;
+}
+
+/*carrito*/
+.cabeceraCarrito{
+	height:40px;
+}
+
+.cabeceraCarrito h3{
+	margin-top:-5px
+}
+
+.cabeceraCheckout{
+	height:66px;
+}
+
+/*checkout*/
+.contenidoCheckout, .contenidoCheckout .row{
+	padding:0px 20px;
+}
+
+.formEnvio{
+	display:none;
+}
+.totalCarrito{
+	color: #dadada;
+}
+
+
+
+/* error 404 */
+
+.error404{
+	color:#333;
+}
+
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+
+	.col-lg-0{
+		display: none;
+	}
+
+	.error404 h1{
+		font-size:100px;
+		text-shadow:8px 8px 1px #dadada;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:1199px) and (min-width:992px){
+
+	.col-md-0{
+		display: none;
+	}
+
+	.error404 h1{
+		font-size:70px;
+		text-shadow:6px 6px 1px #dadada;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){
+
+	.col-sm-0{
+		display: none;
+	}
+
+	
+	.error404 h1{
+		font-size:50px;
+		text-shadow:4px 4px 1px #dadada;
+	}
+
+	.carrito{
+		padding-left: 0px;
+	}
+
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:767px){
+
+	.col-xs-0{
+		display: none;
+	}
+
+	.error404 h1{
+		font-size:30px;
+		text-shadow:2px 2px 1px #dadada;
+	}
+
+	
+
+}

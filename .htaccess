@@ -1,0 +1,12 @@
+#Impedir la visualizacion del contenido de las carpetas del sitio
+
+options All -Indexes
+
+# URL amigables
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*]$ index.php?pagina=$1 [QSA,L]
+#RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?idCategoria=$1
+

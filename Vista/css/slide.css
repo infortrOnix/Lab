@@ -1,0 +1,84 @@
+#slide{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px;
+}
+
+#slide ul{
+    position: relative;
+    left: 0%;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    clear: both;
+    display: table;
+}
+#slide ul li{
+    position: relative;
+    float: left;
+    width: 100%;
+    
+}
+
+#slide ul li img{
+    width: 100%;
+    
+    
+}
+
+#slide .slideOpcion1 img{
+    position: absolute;
+    opacity: 1;
+    top: 5%;
+    right: 10%;
+    width: 25%;
+    
+    
+}
+
+#slide .slideOpcion1 .textosSlide{
+    position: absolute;
+    width: 40%;
+    top: 10%;
+    left: 10%;
+}
+
+#slide .slideOpcion1 h1{
+    text-transform: uppercase;
+    font-size: 35px;
+    opacity: 1;
+    top: -10px;
+    color: #333;
+}
+
+#slide .slideOpcion1 h2{
+    text-transform: uppercase;
+    font-size: 25px;
+    opacity: 1;
+    top: -10px;
+    color: #777;
+}
+
+#slide .slideOpcion1 h3{
+    text-transform: uppercase;
+    font-size: 20px;
+    opacity: 1;
+    top: -10px;
+    color: #888;
+}
+
+#slide .slideOpcion button:hover{
+    background: black;
+    color: white;
+    border: 0px;
+    padding: 10px;
+    opacity: 1;
+    top: -10%;
+
+}
+
+#slide .slideOpcion button span{
+    margin-left: 10px;
+}

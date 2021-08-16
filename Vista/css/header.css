@@ -1,0 +1,161 @@
+/*=============================================
+HEADER
+=============================================*/
+
+.barra #btnCategorias{
+	margin:20px 0;
+}
+
+.barra #btnCategorias p{
+	line-height:40px;
+	margin-bottom:0px;
+}
+
+.barra #btnCategorias p span{
+	cursor: pointer;
+}
+
+.barra #buscador{
+	margin:20px 0;
+}
+
+.barra #buscador input{
+	padding:19px;
+	border-radius:0;
+}
+
+.barra #buscador button{
+	padding:9px;
+	border:1px solid silver;
+	border-radius:0;
+}
+
+.barra #carrito{
+	margin:20px 0;
+}
+
+.barra #carrito button{
+	padding:9px 15px;
+	border:1px solid silver;
+	border-radius:0;
+}
+
+.barra #carrito p{
+	padding:2px;
+	padding-left:60px;
+	border:1px solid #aaa;
+	font-size:12px;
+}
+
+.barra #categoria{
+	display:none;
+	margin-top:-10px;
+	position: relative;
+	padding-bottom:20px;
+}
+
+.barra #categoria h4{
+	margin-top:20px;
+	margin-bottom:-10px;
+}
+
+.barra #categoria hr{
+	border:1px solid rgba(255,255,255,.3);
+}
+
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	.barra #logo img{
+		padding:20px 60px;
+		padding-left:0px;
+	}
+
+	.barra #carrito{
+		padding-left:100px;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:1199px) and (min-width:992px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	.barra #logo img{
+		padding:25px 60px;
+		padding-left:0px;
+	}
+
+	.barra #carrito{
+		padding-left:70px;
+	}
+
+}
+
+/*=============================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){
+
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	.barra #logo img{
+		padding:30px 0px;
+	}
+
+	.barra #carrito{
+		padding-left:55px;
+	}
+
+	.barra #carrito p{
+		display:none;
+	}
+
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+
+@media (max-width:767px){
+
+	
+	/*=============================================
+	HEADER
+	=============================================*/
+
+	.barra #logotipo img{
+		padding:30px;
+		padding-bottom:10px;
+	}
+
+	.barra #categoria{
+		margin-bottom:10px;
+	}
+
+	.barra #buscador{
+		margin-bottom:10px;
+	}
+
+	.barra #carrito{
+		margin:0px;
+	}
+	
+}
