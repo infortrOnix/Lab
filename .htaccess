@@ -1,0 +1,8 @@
+#Impedir la visualizacion del contenido de las carpetas del sitio
+
+options All -Indexes
+
+# URL amigables
+
+RewriteEngine on
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?idCategoria=$1
