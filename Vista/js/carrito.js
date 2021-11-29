@@ -58,7 +58,7 @@ if(localStorage.getItem("listaProductos")!=null){
 						
 						'<figure>'+
 							
-							'<img src="http://localhost/www/web/lab2/vista/productos/"'+item.imagen+'" class="img-thumbnail">'+
+							'<img src="http://localhost/www/web/Lab2/Vista/productos/'+item.imagen+'" class="img-thumbnail">'+
 
 						'</figure>'+
 
@@ -217,6 +217,9 @@ localStorage.setItem("sumaCarrito", sumaCarrito);
 
 
 $(".sacarItem").click(function(){
+
+    
+
     $(this).parent().parent().parent().remove();
 
     var idArticulo = $(".cuerpoCarrito button");
@@ -227,6 +230,18 @@ $(".sacarItem").click(function(){
     var cantidad = $(".cuerpoCarrito .cantidadItem");
 
     /* si quedan productos actualizamos local storage */
+
+    //* modificamos local storage cuando eliminamos un producto del carrito
+    var cantidadCarrito = Number($(".cantidadCarrito").html())-1;
+    var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
+
+    $(".cantidadCarrito").html(cantidadCarrito);
+    $(".sumaCarrito").html(sumaCarrito);
+
+    localStorage.setItem("cantidadCarrito", cantidadCarrito);
+    localStorage.setItem("sumaCarrito", sumaCarrito);
+    
+    //
 
     listaCarrito = [];
 
@@ -266,8 +281,8 @@ $(".sacarItem").click(function(){
 		$(".sumaCarrito").html("0");
 
 		$(".cuerpoCarrito").html('<div class="alert alert-secondary">No tienes producto en el carrito.</div>');
-		//$(".sumaTotalCarrito").hide();
-		//$(".cabeceraCheckout").hide();
+		$(".sumaTotalCarrito").hide();
+		$(".cabeceraCheckout").hide();
      
     }
 
