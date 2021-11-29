@@ -28,6 +28,21 @@ class ProductoControl{
         return $repuesta;
     }
 
+<<<<<<< HEAD
+=======
+
+    //Buscar los Productos que tengan oferta en tabla Producto
+
+    static public function ctrBuscarOferta(){
+        $tabla = "producto";        
+        $repuesta = ProductoModelo::modelBuscarOferta($tabla);
+        return $repuesta;
+    }
+
+
+    
+
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
 
 ?>

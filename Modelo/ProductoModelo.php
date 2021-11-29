@@ -37,6 +37,26 @@ class ProductoModelo{
         $stmt->close;
     }
 
+<<<<<<< HEAD
+=======
+
+    //busca el Producto que tenga el valor "oferta" en "1" en la tabla Producto
+
+    static public function modelBuscarOferta($tabla){
+
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE oferta = 1");
+       
+        $stmt -> execute();
+        return $stmt -> fetchAll();
+
+        $stmt->close;
+    }
+
+    //busca el Producto que tenga el valor busqueda en descripcion en la tabla Producto
+
+    
+
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
 
 

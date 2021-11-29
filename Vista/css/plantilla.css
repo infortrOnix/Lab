@@ -3,11 +3,19 @@ GLOBAL
 =============================================*/
 
 *{
+<<<<<<< HEAD
 	margin:0px;
 	padding:0px;
 	list-style: none;
 	text-decoration: none;
 	font-family: 'Ubunt', sans-serif;
+=======
+/*	margin:0px;*/
+	padding:0px;
+	list-style: none;
+	text-decoration: none;
+	
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
 
 ul, ol{
@@ -48,8 +56,13 @@ a:visited, a:link, a:focus, a:hover, a:active{
 	border: 1px solid silver;
 	border-radius: 0;
 }
+<<<<<<< HEAD
 .barra #carrito{
 	margin: 20px 0;
+=======
+#carrito{
+	margin-top: 12px;	
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
 .barra #carrito button{
 	padding: 9px 15px;
@@ -79,6 +92,7 @@ a:visited, a:link, a:focus, a:hover, a:active{
 	border: 1px solid rgba(255, 255, 255, .3);
 }
 #card-carrito{
+<<<<<<< HEAD
 	border: rgb(104, 103, 103) solid 1px;
 	padding: 5px;
 	border-radius: 2%;
@@ -86,6 +100,128 @@ a:visited, a:link, a:focus, a:hover, a:active{
 /*=============================================
 ERROR 404
 =============================================*/
+=======
+	border: rgb(190, 188, 188) solid 1px;
+	padding: 35px;
+	border-radius: 2%;
+	width: 300px;
+	margin: 20px;
+	
+	
+}
+.img-card-producto{
+	width: 200px;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content: space-between;
+	flex-basis: 10em;
+	text-align: center;
+	padding-bottom: 15px;
+	
+	
+}
+
+.row-oferta{
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content: space-between;
+	flex-basis: 10em;
+	text-align: center;
+	padding-bottom: 15px;
+	
+	
+}
+.row-oferta img{
+	width: 150px;
+}
+
+#card-oferta{
+	border: rgb(241, 161, 10) solid 2px;
+	padding: 5px;
+	border-radius: 2%;
+	width: 220px;
+	height: 450px;
+	margin-bottom: 50px;
+	
+	
+	
+}
+
+#card-oferta h4{
+	font-size: 14px bold;
+	color: #1e1f1f;
+}
+
+.oferta{
+	background: #f0ba47;
+	border-radius: 5px;
+	
+	
+}
+
+/*Modales*/
+
+.modalTitulo{
+	padding:5px 0px;
+
+
+}
+
+.modalTitulo h3{
+	text-align:center;
+	margin-top:-5px;
+	padding: 15px 0px;
+	border-radius:5px 5px 0px 0px;
+}
+.modalForm .close{
+	position:absolute;
+	right:27px;
+	top:15px;
+	color:white;
+}
+.modal-footer p{
+	color:grey;
+	
+}
+.modal-footer h3{
+	text-align:center;
+	color:grey;
+}
+
+/*carrito*/
+.cabeceraCarrito{
+	height:40px;
+}
+
+.cabeceraCarrito h3{
+	margin-top:-5px
+}
+
+.cabeceraCheckout{
+	height:66px;
+}
+
+/*checkout*/
+.contenidoCheckout, .contenidoCheckout .row{
+	padding:0px 20px;
+}
+
+.formEnvio{
+	display:none;
+}
+.totalCarrito{
+	color: #dadada;
+}
+
+
+
+/* error 404 */
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 
 .error404{
 	color:#333;
@@ -103,7 +239,11 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 	}
 
 	.error404 h1{
+<<<<<<< HEAD
 		font-size:300px;
+=======
+		font-size:100px;
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 		text-shadow:8px 8px 1px #dadada;
 	}
 
@@ -120,7 +260,11 @@ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
 	}
 
 	.error404 h1{
+<<<<<<< HEAD
 		font-size:200px;
+=======
+		font-size:70px;
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 		text-shadow:6px 6px 1px #dadada;
 	}
 
@@ -136,11 +280,24 @@ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
 		display: none;
 	}
 
+<<<<<<< HEAD
 	.error404 h1{
 		font-size:150px;
 		text-shadow:4px 4px 1px #dadada;
 	}
 
+=======
+	
+	.error404 h1{
+		font-size:50px;
+		text-shadow:4px 4px 1px #dadada;
+	}
+
+	.carrito{
+		padding-left: 0px;
+	}
+
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
 
 /*=============================================
@@ -154,8 +311,17 @@ MOVIL (XS revisamos en 320px)
 	}
 
 	.error404 h1{
+<<<<<<< HEAD
 		font-size:75px;
 		text-shadow:2px 2px 1px #dadada;
 	}
 
+=======
+		font-size:30px;
+		text-shadow:2px 2px 1px #dadada;
+	}
+
+	
+
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
 }
