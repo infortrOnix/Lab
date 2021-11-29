@@ -5,27 +5,12 @@
 require_once "./Modelo/Url.php";
 require_once "./Modelo/ProductoModelo.php";
 
-
-
 require_once "./Control/ProductoControl.php";
 
 
-
-//
-
-
-        # include_once "./Vista/header.php";
-        # include_once "./Vista/menu.php";
-        #include_once "./Vista/footer.php";
-
-
-        
 //Carga de URL fija
 
 $url = Url::UrlControl();
-
-
-
 
 
 //Header
@@ -35,8 +20,7 @@ $url = Url::UrlControl();
         $header->headerControl();
 
 //fin Header
-        
-
+ 
 
 //Menu
        require_once "./Control/PlantillaControl.php";
@@ -44,10 +28,7 @@ $url = Url::UrlControl();
        $menu->menuControl();
 
 //fin Menu      
-
-
-
-       
+    
 
     //control de secciones a mostrar en el main
 
