@@ -29,6 +29,7 @@ class ProductoControl{
     }
 
 
+
     //Buscar los Productos que tengan oferta en tabla Producto
 
     static public function ctrBuscarOferta(){
@@ -39,6 +40,7 @@ class ProductoControl{
 
 
     
+
 
 }
 
