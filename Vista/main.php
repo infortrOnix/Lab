@@ -1,7 +1,48 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 <!--Main-->
 <!--Container-->
 
 <div class="container">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  <h2>Promociones</h2>
+  
+  <!--producto-->
+	<div class="col-md-3 product-left"> 
+		<div class="p-one simpleCart_shelfItem">							
+			<a href="single.html">
+				<img src="<?php echo $url; ?>Vista/productos/anteojosMiracle.jpg" alt="" />
+					<div class="mask">
+						<span>Ver</span>
+					</div>
+			</a>
+				<h4>Producto Prueba</h4>
+					<p>
+						<a class="item_add" href="#">
+							<span class=" item_price">$329</span>
+						</a>	
+					</p>
+					
+		</div>
+		<button type="submit" class="btn btn-dark">Agregar</button>
+	</div>
+	
+</div>
+
+	
+<!--Fin Container-->
+
+
+<!--Fin Main-->
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 	<h2><span class="glyphicon glyphicon-hand-right"></span> Promociones Vigentes!!</h2>
 
 	<!---->
@@ -102,4 +143,9 @@
 <!--Fin Container-->
 
 
+<<<<<<< HEAD
 <!--Fin Main-->
+=======
+<!--Fin Main-->
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9

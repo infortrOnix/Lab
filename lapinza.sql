@@ -1,4 +1,19 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 16-06-2020 a las 05:16:47
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.1.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
@@ -8,6 +23,10 @@
 -- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,6 +43,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-- Estructura de tabla para la tabla `articulo`
+--
+
+CREATE TABLE `articulo` (
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 -- Estructura de tabla para la tabla `carrito`
 --
 
@@ -110,6 +138,10 @@ CREATE TABLE `orden` (
 --
 
 CREATE TABLE `producto` (
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
   `idArticulo` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `marca` varchar(100) NOT NULL,
@@ -125,6 +157,19 @@ CREATE TABLE `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-- Volcado de datos para la tabla `articulo`
+--
+
+INSERT INTO `articulo` (`idArticulo`, `descripcion`, `marca`, `detalle`, `imagen`, `precioMinorista`, `descuentoMayorista`, `cantidadMinima`, `oferta`, `descuentoOferta`, `stock`, `idcategoria`) VALUES
+(1, 'Caja de Herramientas', 'Stanley', 'Caja Plastica para Herramientas de mano', 'cajaHerramientas.jpg', 1800, 10, 5, 0, 2, 100, 1),
+(2, 'Carretilla 75L', 'Garelli', 'Carretilla metálica , rueda de caucho con cámara, capacidad 75 litros', 'carretilla75l.jpg', 3200, 10, 10, 0, 5, 200, 2),
+(3, 'Cemento Loma negra 50Kg', 'Loma Negra', 'Cemento PortLand por bolsa de 50 Kg. marca Loma Negra', 'cementoLomaNegrax50.jpg', 1200, 5, 100, 0, 2, 1000, 2),
+(4, 'Pinza Pico de Loro', 'Bako', 'Pinza de mano Pico de Loro', 'pinzaPicoLoro.jpg', 450, 5, 20, 0, 0, 60, 3);
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 -- Volcado de datos para la tabla `producto`
 --
 
@@ -137,6 +182,24 @@ INSERT INTO `producto` (`idArticulo`, `descripcion`, `marca`, `detalle`, `imagen
 (6, 'Kit de Herramientas', 'Black&Decker', 'Juego de Herramientas de mano, en caja maletin de plastico reforzado.', 'juegoHerramientasManuales.jpg', 3500, 10, 5, 1, 15, 54, 2),
 (7, 'Escalera Tijera Aluminio', 'Halley', 'Escalera aluminio 8 pasos, plegable tipo tijera', 'escalera8pasos.jpg', 1800, 5, 4, 0, 0, 40, 8),
 (8, 'Taladro a Baterias', 'TCC', 'Taladro 12 mm con cargador de baterias', 'taladroInalambricoTcc.jpg', 4600, 15, 2, 1, 15, 20, 12);
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+
+-- --------------------------------------------------------
+
+--
+<<<<<<< HEAD
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `idcarrito` int(10) NOT NULL,
+  `idusuario` varchar(100) NOT NULL,
+  `idproducto` int(10) NOT NULL,
+  `cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 
 -- --------------------------------------------------------
 
@@ -145,6 +208,19 @@ INSERT INTO `producto` (`idArticulo`, `descripcion`, `marca`, `detalle`, `imagen
 --
 
 CREATE TABLE `usuario` (
+<<<<<<< HEAD
+=======
+  `idusuario` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(8) NOT NULL,
+  `idTipoUser` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+=======
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
   `idUsuario` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -165,12 +241,25 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `email`, `password`, `salt`, `nombre`, `apellido`, `ciudad`, `provincia`, `cp`, `domicilio`, `idTipoUser`, `fecha`) VALUES
 (22, 'norbertovaldeon@gmail.com', '304abb52fda3c71cb3efcf4ff1bb60c63cff0a7e67249b9a4a4c781f1fafd958', 'ad822efa28ccee6b084d572f0a6dac6fa00528164078ed9fb06aca16e660b51e', 'Norberto', 'Valdeon', 'La Toma', 'San Luis', '5759', 'Pte Peron mz 42 c1', 1, '2021-07-28 01:08:37');
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-- Indices de la tabla `articulo`
+--
+ALTER TABLE `articulo`
+  ADD PRIMARY KEY (`idArticulo`);
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 -- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
@@ -204,12 +293,25 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`);
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-- AUTO_INCREMENT de la tabla `articulo`
+--
+ALTER TABLE `articulo`
+  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+=======
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
@@ -261,6 +363,10 @@ ALTER TABLE `orden`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idCategoria`);
+<<<<<<< HEAD
+=======
+>>>>>>> 6305b238a78752d15b151fce5c530816229c8942
+>>>>>>> d9559cdca9aa9f879717e09519262637e44b1fa9
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

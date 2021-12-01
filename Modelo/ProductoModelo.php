@@ -38,6 +38,7 @@ class ProductoModelo{
     }
 
 
+
     //busca el Producto que tenga el valor "oferta" en "1" en la tabla Producto
 
     static public function modelBuscarOferta($tabla){
@@ -53,6 +54,7 @@ class ProductoModelo{
     //busca el Producto que tenga el valor busqueda en descripcion en la tabla Producto
 
     
+
 
 }
 
