@@ -15,10 +15,6 @@ if(localStorage.getItem("cantidadCarrito") != null){
 
 /*-------------------------------------*/
 
-
-
-
-
 /*----------------------------------- */
 //  Agregar carrito a la vista
 /*----------------------------------- */
@@ -31,7 +27,7 @@ if(localStorage.getItem("listaProductos")!=null){
 
     function funcionForEach(item,index){
 
-        console.log("itema", item);
+      //  console.log("itema", item); //prueba de caputura de datos del carrito
 
 
         /*traemos el html del carrito */
@@ -58,7 +54,7 @@ if(localStorage.getItem("listaProductos")!=null){
 						
 						'<figure>'+
 							
-							'<img src="http://localhost/www/web/Lab2/Vista/productos/'+item.imagen+'" class="img-thumbnail">'+
+							'<img src="http://localhost/www/web/Lab/Vista/productos/'+item.imagen+'" class="img-thumbnail">'+
 
 						'</figure>'+
 
@@ -129,18 +125,17 @@ if(localStorage.getItem("listaProductos")!=null){
                 //$(".cantidadItem").attr("readonly","true");
     }
 }else{
+
+   // listaCarrito=[];
     $(".cantidadCarrito").html("0");
 	$(".sumaCarrito").html("0");
     $(".cuerpoCarrito").html('<div class="alert alert-primary">No tienes productos en el carrito !</div>');
 }
 
 
-
 /*----------------------------------- */
 //  Agregar carrito al local storage
 /*----------------------------------- */
-
-
  
 $(".agregarCarrito").click(function(){
 
@@ -170,7 +165,6 @@ $(".agregarCarrito").click(function(){
    //console.log("stock", stock);
    //console.log("imagen", imagen);
   
-
    /*----------------------------------- */
 //  Almacenar en local storage
 /*----------------------------------- */
@@ -197,7 +191,7 @@ listaCarrito.push({"idArticulo":idArticulo,
 
 //console.log("listaCarrito", listaCarrito);
 
-localStorage.setItem("listaProductos", JSON.stringify(listaCarrito));
+localStorage.setItem("listaProductos", JSON.stringify(listaCarrito)); //el array listaCarrito[] lo hacemos un Json para lamacenarlo en el local Storage
 
 
 /* actualizamos la cuenta de la barra*/
@@ -220,9 +214,12 @@ $(".sacarItem").click(function(){
 
     
 
-    $(this).parent().parent().parent().remove();
+    $(this).parent().parent().parent().remove();// sacamos el item de la vista
 
+    //  nombreVariable = $( .nombreClase nombreClaseElemento)
+    //se almacena todo lo capturado en un array
     var idArticulo = $(".cuerpoCarrito button");
+    console.log("idArcticulo : ", idArticulo);
     var imagen = $(".cuerpoCarrito img");
     var descripcion = $(".cuerpoCarrito .tituloCarritoCompra");
     var detalle = $(".cuerpoCarrito .detalleCarritoCompra");
@@ -230,6 +227,20 @@ $(".sacarItem").click(function(){
     var cantidad = $(".cuerpoCarrito .cantidadItem");
 
     /* si quedan productos actualizamos local storage */
+
+        listaCarrito=[]; //vaciamos el array para solo volver a poner los item que realmente quedaron sin el eliminado
+
+        if(idArticulo.length !=0){
+            for (var i = 0 ; idArticulo.length; i++){
+                var idArticuloArray = $(idArticulo[i])
+
+                
+            }
+
+        }else{
+
+        }
+
 
     //* modificamos local storage cuando eliminamos un producto del carrito
     var cantidadCarrito = Number($(".cantidadCarrito").html())-1;

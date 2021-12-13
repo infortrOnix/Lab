@@ -45,7 +45,7 @@ class UsuarioModelo{
 
 		return $stmt -> fetch();
 
-		$stmt-> close();
+		$stmt-> close;
 
 		$stmt = null;
 

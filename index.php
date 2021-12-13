@@ -27,7 +27,9 @@ $header->headerControl();
 //fin Header
 
 //Menu
-require_once "./Control/PlantillaControl.php";
+
+//include_once "./Control/PlantillaControl.php";
+
 $menu = new PlantillaControl();
 $menu->menuControl();
 
@@ -52,7 +54,7 @@ if (isset($_GET['pagina'])) {
 //fin de control de seccion a mostrar
 
 //footer
-require_once "./Control/PlantillaControl.php";
+//include_once "./Control/PlantillaControl.php";
 $footer = new PlantillaControl();
 $footer->footerControl();
 //fin footer    

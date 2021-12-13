@@ -6,7 +6,7 @@
 
 	<!---->
 	<?php
-	//buscamos los productos por categoria
+	//buscamos los productos de Oferta !
 	$productoOferta = ProductoControl::ctrBuscarOferta();
 
 	if ($productoOferta != null) {
@@ -15,32 +15,8 @@
 
 		foreach ($productoOferta as $key => $productosVal) {
 
-			//echo "ID Articulo:  ".$productosVal['idArticulo']."<br>";
-			//echo "ID Categoria:  ".$productosVal['idcategoria']."<br>";
-			//echo "Descripcion:  ".$productosVal['descripcion']."<br>";
-			//echo "Marca:  ".$productosVal['marca']."<br>";
-			//echo "Detalle:  ".$productosVal['detalle']."<br>";
-			//echo "Precio :$  ".$productosVal['precioMinorista']."<br>";
-			//echo "Descuento a Mayorista %:  ".$productosVal['descuentoMayorista']."<br>";
-			//echo "Pedido Minimo:  ".$productosVal['cantidadMinima']."<br>";
-			//echo "Esta en Oferta:  ".$productosVal['oferta']."<br>";
-			//echo "Descuento de Oferta %:  ".$productosVal['descuentoOferta']."<br>";
-			//echo "Stock:  ".$productosVal['stock']."<br>";
-			//echo "imagen :  ".$productosVal['imagen']."<br>";
-			//echo "<img src="."Vista/productos/".$productosVal['imagen']." alt='' />";
-
-
-			//*
-
-			//*
-
-
-
+			
 			echo "<div class=''  id='card-oferta'>";
-
-
-
-
 
 			echo "<div class='oferta'>";
 			echo "<h2>" . $productosVal['descuentoOferta'] . " % OFF!<h2>";

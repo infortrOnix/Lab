@@ -2,11 +2,11 @@
 .- La Carpeta Public/ tendra la informacion correspondiente a los archivos
     que contienen los archivos accesibles por el usuarios
 
-.- La carpeta App/ contiene la estructura MVC donde tenemos
-    Vistas/
-    Controladores/
-    Modelos/
-    y Libs/ que contendra librerias o archivos auxiliares para el 
+.- La carpeta principal Lab/ contiene la estructura MVC donde tenemos
+    Vista/
+    Controlador/
+    Modelo/
+    y Config/ que contendra librerias o archivos auxiliares para el 
     correcto funcionamiento de la aplicacion
         ej:
             configuracion acceso a BD (Mysql.php)
@@ -35,3 +35,9 @@
 
 
 *- Lista blancas para evitar ataques de inyeccion sql a traves de la url
+
+
+
+
+*/--- usamos LocalStorage para almacenar temporalmente los item del carrito
+	LocalStorage no almacena array, pero almacenaremos un string , pasando el array a json

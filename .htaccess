@@ -4,5 +4,5 @@ options All -Indexes
 
 # URL amigables
 
-RewriteEngine on
+RewriteEngine On
 RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?idCategoria=$1
