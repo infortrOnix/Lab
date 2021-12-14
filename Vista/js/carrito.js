@@ -27,11 +27,13 @@ if(localStorage.getItem("listaProductos")!=null){
 
     function funcionForEach(item,index){
 
-      //  console.log("itema", item); //prueba de caputura de datos del carrito
+      //  console.log("itema", item); //prueba de captura de datos del carrito
 
 
         /*traemos el html del carrito */
 
+        /* Sintaxis append --> Jquery $(selector).append(content,function(index,html)) <--*/
+        /* Insertamos html desde Js */
         $(".cuerpoCarrito").append('<div clas="row itemCarrito">'+
 
 					'<div class="col-sm-1 col-xs-12">'+
@@ -55,6 +57,10 @@ if(localStorage.getItem("listaProductos")!=null){
 						'<figure>'+
 							
 							'<img src="http://localhost/www/web/Lab/Vista/productos/'+item.imagen+'" class="img-thumbnail">'+
+                            '<br>'+
+
+						'<p class="tituloCarritoCompra text-left"><span>'+item.descripcion+'</span></p>'+
+                            
 
 						'</figure>'+
 
@@ -62,9 +68,10 @@ if(localStorage.getItem("listaProductos")!=null){
 
 					'<div class="col-sm-2 col-xs-12">'+
 
-						'<br>'+
+						
+                        '<br>'+
 
-						'<p class="tituloCarritoCompra text-left">'+item.descripcion+'</p>'+
+						'<p class="marcaCarritoCompra text-center"><span>Marca: '+item.marca+'</span></p>'+
 
 					'</div>'+
 
@@ -93,7 +100,7 @@ if(localStorage.getItem("listaProductos")!=null){
 
 							'<center>'+
 							
-								'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'">'+
+								'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'"precioMinorista="'+item.precioMinorista+'"idArticulo="'+item.idArticulo+'"item="'+index+'">'+
 
 							'</center>'+
 
@@ -107,7 +114,7 @@ if(localStorage.getItem("listaProductos")!=null){
 
 						'<p>'+
 							
-							'<strong>USD $<span>10</span></strong>'+
+							'<strong>$ <span>'+Number(item.cantidad)*Number(item.precioMinorista)+'</span></strong>'+
 
 						'</p>'+
 

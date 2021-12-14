@@ -66,13 +66,12 @@
 				//echo "<h6>".$productosVal['detalle']."</h6>";
 				echo "<p>";
 				echo "<a class='' href='#'>";
-				echo '<button type="submit" class="btn btn-default backColor agregarCarrito" idArticulo="'.$productosVal["idArticulo"].'" descripcion="'.$productosVal["descripcion"].'"
-				detalle="'.$productosVal["detalle"].'"
-				precioMinorista="'.$productosVal["precioMinorista"].'" imagen="'.$productosVal["imagen"].'"
-				>Agregar <span class="glyphicon glyphicon-shopping-cart"></button>';
-
+				
 				/*
-				 copia de captura de datos 
+				echo '<button type="submit" class="btn btn-default backColor agregarCarrito" idArticulo="'.$productosVal["idArticulo"].'" descripcion="'.$productosVal["descripcion"].'"detalle="'.$productosVal["detalle"].'"precioMinorista="'.$productosVal["precioMinorista"].'" imagen="'.$productosVal["imagen"].'">Agregar <span class="glyphicon glyphicon-shopping-cart"></button>';
+				*/
+
+				
 				 
 				 echo '<button type="submit" class="btn btn-default backColor agregarCarrito" idArticulo="'.$productosVal["idArticulo"].'" idcategoria="'.$productosVal["idcategoria"].'" descripcion="'.$productosVal["descripcion"].'" marca="'.$productosVal["marca"].'"
 				detalle="'.$productosVal["detalle"].'"
@@ -84,7 +83,7 @@
 				stock="'.$productosVal["stock"].'" imagen="'.$productosVal["imagen"].'"
 				>Agregar <span class="glyphicon glyphicon-shopping-cart"></button>';
 							 
-				 */
+				
 
 				echo "<span class=' precio'><h3> $ " . $productosVal['precioMinorista'] . "</h3></span>";
 				echo "</a>	";
