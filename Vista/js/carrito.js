@@ -15,6 +15,9 @@ if(localStorage.getItem("cantidadCarrito") != null){
 
 /*-------------------------------------*/
 
+
+
+
 /*----------------------------------- */
 //  Agregar carrito a la vista
 /*----------------------------------- */
@@ -146,6 +149,8 @@ if(localStorage.getItem("listaProductos")!=null){
  
 $(".agregarCarrito").click(function(){
 
+
+    //Todas los datos que vienen en el btn "agregarCarrito" los almacenamos en las variables correspondiente
     var idArticulo = $(this).attr("idArticulo");
     var idcategoria = $(this).attr("idcategoria");
     var descripcion = $(this).attr("descripcion");
@@ -172,47 +177,54 @@ $(".agregarCarrito").click(function(){
    //console.log("stock", stock);
    //console.log("imagen", imagen);
   
-   /*----------------------------------- */
-//  Almacenar en local storage
-/*----------------------------------- */
-
-if(localStorage.getItem("listaProductos")==null){
-    listaCarrito=[];
-}else{
-    listaCarrito.concat(localStorage.getItem("listaProductos"));
-}
-
-listaCarrito.push({"idArticulo":idArticulo,
-"idcategoria":idcategoria,
-"descripcion":descripcion,
-"marca":marca,
-"detalle":detalle,
-"precioMinorista":precioMinorista,
-"descuentoMayorista":descuentoMayorista,
-"cantidadMinima":cantidadMinima,
-"oferta":oferta,
-"descuentoOferta":descuentoOferta,
-"stock":stock,
-"imagen":imagen,
-"cantidad":"1"});
-
-//console.log("listaCarrito", listaCarrito);
-
-localStorage.setItem("listaProductos", JSON.stringify(listaCarrito)); //el array listaCarrito[] lo hacemos un Json para lamacenarlo en el local Storage
+    /*----------------------------------- */
+    //  Almacenar en local storage
+    /*----------------------------------- */
 
 
-/* actualizamos la cuenta de la barra*/
+    // si la Key : "listaProducto esta vacio -> creamos el array para almacenar el articulo elegido"
+    if(localStorage.getItem("listaProductos")==null){
+        listaCarrito=[];
+    }else{
 
-var cantidadCarrito = Number($(".cantidadCarrito").html())+1;
-var sumaCarrito = Number($(".sumaCarrito").html())+ Number(precioMinorista);
+        //si ya tenemos articulos en el carrito, se concatena el nuevo
+        listaCarrito.concat(localStorage.getItem("listaProductos"));
+    }
 
-$(".cantidadCarrito").html(cantidadCarrito);
-$(".sumaCarrito").html(sumaCarrito);
+    //ahora agregamos el articulo al array para despues crear la key con los values en localStorage
 
-localStorage.setItem("cantidadCarrito", cantidadCarrito);
-localStorage.setItem("sumaCarrito", sumaCarrito);
+    listaCarrito.push({"idArticulo":idArticulo,
+    "idcategoria":idcategoria,
+    "descripcion":descripcion,
+    "marca":marca,
+    "detalle":detalle,
+    "precioMinorista":precioMinorista,
+    "descuentoMayorista":descuentoMayorista,
+    "cantidadMinima":cantidadMinima,
+    "oferta":oferta,
+    "descuentoOferta":descuentoOferta,
+    "stock":stock,
+    "imagen":imagen,
+    "cantidad":"1"});
 
-/*----------------------- */
+    //console.log("listaCarrito", listaCarrito);
+    //alamcenamos el array en localStorage
+
+    localStorage.setItem("listaProductos", JSON.stringify(listaCarrito)); //el array listaCarrito[] lo hacemos un Json para lamacenarlo en el local Storage
+
+
+    /* actualizamos la cuenta de la barra*/
+
+    var cantidadCarrito = Number($(".cantidadCarrito").html())+1;
+    var sumaCarrito = Number($(".sumaCarrito").html())+ Number(precioMinorista);
+
+    $(".cantidadCarrito").html(cantidadCarrito);
+    $(".sumaCarrito").html(sumaCarrito);
+
+    localStorage.setItem("cantidadCarrito", cantidadCarrito);
+    localStorage.setItem("sumaCarrito", sumaCarrito);
+
+    /*----------------------- */
     
 })
 
@@ -225,43 +237,27 @@ $(".sacarItem").click(function(){
 
     //  nombreVariable = $( .nombreClase nombreClaseElemento)
     //se almacena todo lo capturado en un array
-    var idArticulo = $(".cuerpoCarrito button");
+    var idArticulo = $(".cuerpoCarrito button idArticulo");
+    alert(idArticulo);
     console.log("idArcticulo : ", idArticulo);
-    var imagen = $(".cuerpoCarrito img");
-    var descripcion = $(".cuerpoCarrito .tituloCarritoCompra");
-    var detalle = $(".cuerpoCarrito .detalleCarritoCompra");
-    var precioMinorista = $(".cuerpoCarrito .precioCarritoCompra");
-    var cantidad = $(".cuerpoCarrito .cantidadItem");
-
-    /* si quedan productos actualizamos local storage */
-
+    
+    
         listaCarrito=[]; //vaciamos el array para solo volver a poner los item que realmente quedaron sin el eliminado
 
-        if(idArticulo.length !=0){
-            for (var i = 0 ; idArticulo.length; i++){
-                var idArticuloArray = $(idArticulo[i])
-
-                
-            }
-
-        }else{
-
-        }
-
-
-    //* modificamos local storage cuando eliminamos un producto del carrito
+    //* modificamos local storage la key cantidadCarrito cuando eliminamos un producto del carrito
     var cantidadCarrito = Number($(".cantidadCarrito").html())-1;
-    var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
+   // var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
 
+   // modificamos el html con los nuevos valores
     $(".cantidadCarrito").html(cantidadCarrito);
-    $(".sumaCarrito").html(sumaCarrito);
+   // $(".sumaCarrito").html(sumaCarrito);
 
     localStorage.setItem("cantidadCarrito", cantidadCarrito);
-    localStorage.setItem("sumaCarrito", sumaCarrito);
+   // localStorage.setItem("sumaCarrito", sumaCarrito);
     
     //
 
-    listaCarrito = [];
+  //  listaCarrito = [];
 
     if(idArticulo.lenght !=0){
 
@@ -284,7 +280,7 @@ $(".sacarItem").click(function(){
         
         localStorage.setItem("listaProductos", JSON.stringify(listaCarrito));
 
-        sumaSubtotales();
+      //  sumaSubtotales();
 		cantidadCarrito(listaCarrito.length);
 
     }else{
