@@ -24,19 +24,17 @@ if(localStorage.getItem("cantidadCarrito") != null){
 //verificamos que el local store no este vacio y evitar suplantar los datos
 
 if(localStorage.getItem("listaProductos")!=null){
-    var listaCarrito = JSON.parse(localStorage.getItem("listaProductos"));
+    var listaCarrito = JSON.parse(localStorage.getItem("listaProductos")); //parseamos JSON a array
 
-    listaCarrito.forEach(funcionForEach);
+    listaCarrito.forEach(funcionForEach);// renderizamos el array del carrito
 
     function funcionForEach(item,index){
 
-      //  console.log("itema", item); //prueba de captura de datos del carrito
-
-
-        /*traemos el html del carrito */
-
-        /* Sintaxis append --> Jquery $(selector).append(content,function(index,html)) <--*/
-        /* Insertamos html desde Js */
+        console.log("itema", item); //prueba de captura de datos del carrito
+        
+        console.log(listaCarrito);
+        /* Sintaxis append --> (Jquery) $(selector).append(content,function(index,html)) <--*/
+        /* Insertamos html desde el array Js */
         $(".cuerpoCarrito").append('<div clas="row itemCarrito">'+
 
 					'<div class="col-sm-1 col-xs-12">'+
@@ -233,27 +231,31 @@ $(".sacarItem").click(function(){
 
     
 
+
     $(this).parent().parent().parent().remove();// sacamos el item de la vista
 
     //  nombreVariable = $( .nombreClase nombreClaseElemento)
     //se almacena todo lo capturado en un array
     var idArticulo = $(".cuerpoCarrito button idArticulo");
+    var precioMinorista =  $(this).attr("precioMinorista");
+
+
     alert(idArticulo);
     console.log("idArcticulo : ", idArticulo);
-    
-    
+        
         listaCarrito=[]; //vaciamos el array para solo volver a poner los item que realmente quedaron sin el eliminado
 
     //* modificamos local storage la key cantidadCarrito cuando eliminamos un producto del carrito
     var cantidadCarrito = Number($(".cantidadCarrito").html())-1;
-   // var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
+    var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
+    
 
    // modificamos el html con los nuevos valores
     $(".cantidadCarrito").html(cantidadCarrito);
    // $(".sumaCarrito").html(sumaCarrito);
 
     localStorage.setItem("cantidadCarrito", cantidadCarrito);
-   // localStorage.setItem("sumaCarrito", sumaCarrito);
+    localStorage.setItem("sumaCarrito", sumaCarrito);
     
     //
 
