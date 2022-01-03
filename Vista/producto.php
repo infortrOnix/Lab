@@ -8,7 +8,7 @@
 
 	<!--<h2>Productos de la categoria</h2>-->
 
-	<div class="">
+	<div class="mostrar-producto">
 		<!--producto-->
 
 

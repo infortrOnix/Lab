@@ -31,7 +31,7 @@ $url = Url::UrlControl();
 <script src="<?php echo $url; ?>Vista/js/barra.js"></script>
 <script src="<?php echo $url; ?>Vista/js/usuario.js"></script>
 
-<script src="./vista/js/usuario.js"></script>
+<!--<script src="./vista/js/usuario.js"></script>-->
 <script src="./vista/js/carrito.js"></script>
 
 </body>

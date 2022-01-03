@@ -146,6 +146,7 @@ if(localStorage.getItem("listaProductos")!=null){
 /*----------------------------------- */
  
 $(".agregarCarrito").click(function(){
+    alert("iniciando carga carrito");
 
 
     //Todas los datos que vienen en el btn "agregarCarrito" los almacenamos en las variables correspondiente
@@ -164,10 +165,10 @@ $(".agregarCarrito").click(function(){
 
    //console.log("idArticulo", idArticulo);
    //console.log("idcategoria", idcategoria);
-   //console.log("descripcion", descripcion);
+   console.log("descripcion", descripcion);
    //console.log("marca", marca);
    //console.log("detalle", detalle);
-   //console.log("precioMinorista", precioMinorista);
+   console.log("precioMinorista", precioMinorista);
    //console.log("descuentoMayorista", descuentoMayorista);
    //console.log("cantidadMinima", cantidadMinima);
    //console.log("oferta", oferta);
@@ -215,6 +216,7 @@ $(".agregarCarrito").click(function(){
 
     var cantidadCarrito = Number($(".cantidadCarrito").html())+1;
     var sumaCarrito = Number($(".sumaCarrito").html())+ Number(precioMinorista);
+    alert("suma carrito : ", sumaCarrito);
 
     $(".cantidadCarrito").html(cantidadCarrito);
     $(".sumaCarrito").html(sumaCarrito);
@@ -265,6 +267,8 @@ $(".sacarItem").click(function(){
 
         for(var i = 0; i < idArticulo.lenght; i++){
             
+            //alamcenamos en variables los elementos del html que no seran eliminados
+
             var idArticuloArray = $(idArticulo[i]).attr("idArticulo");
             var imagenArray = $(imagen[i]).attr("src");
 			var descripcionArray = $(descripcion[i]).html();
@@ -272,6 +276,7 @@ $(".sacarItem").click(function(){
 			var precioArray = $(precioMinorista[i]).html();
 			var cantidadArray = $(cantidad[i]).val();
 
+            //creamos el array para pasar lo elemtos que quedan en el carrito
             listaCarrito.push({"idArticulo":idArticuloArray,
                                 "descripcion":descripcionArray,
                                 "detalle":detalleArray,
@@ -280,6 +285,8 @@ $(".sacarItem").click(function(){
                                 "cantidad":cantidadArray});
         }
         
+        //almacenamos ahora el array previo parcheo a JSON en el LocalStorage
+
         localStorage.setItem("listaProductos", JSON.stringify(listaCarrito));
 
       //  sumaSubtotales();
@@ -287,13 +294,13 @@ $(".sacarItem").click(function(){
 
     }else{
 
-        localStorage.removeItem("listaProductos");
+        localStorage.removeItem("listaProductos"); // se limpia el localstorage
 
-		localStorage.setItem("cantidadCarrito","0");
+		localStorage.setItem("cantidadCarrito","0"); // se pone en cero el valor de la key en LS
 		
-		localStorage.setItem("sumaCarrito","0");
+		localStorage.setItem("sumaCarrito","0"); // se pone en cero el valor de la key en LS
 
-		$(".cantidadCarrito").html("0");
+		$(".cantidadCarrito").html("0"); // cambiamos el html con el valor actual
 		$(".sumaCarrito").html("0");
 
 		$(".cuerpoCarrito").html('<div class="alert alert-secondary">No tienes producto en el carrito.</div>');
