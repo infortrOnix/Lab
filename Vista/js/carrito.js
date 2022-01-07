@@ -25,25 +25,30 @@ if(localStorage.getItem("cantidadCarrito") != null){
 
 if(localStorage.getItem("listaProductos")!=null){
     var listaCarrito = JSON.parse(localStorage.getItem("listaProductos")); //parseamos JSON a array
-
+    var sumaCarr = 0;
+    var cantItem=0;
     listaCarrito.forEach(funcionForEach);// renderizamos el array del carrito
+    
 
     function funcionForEach(item,index){
-
-        console.log("itema", item); //prueba de captura de datos del carrito
+        console.log("id : "+item.idArticulo+" descripcion : "+item.descripcion+" $ : "+item.precioMinorista," index: "+index);
+      //  console.log("itema", item); //prueba de captura de datos del carrito
+        sumaCarr += Number(item.precioMinorista);
+        console.log("suma carr : ", sumaCarr);
+        cantItem ++;
+        console.log("Cantidad : ", cantItem);
         
-        console.log(listaCarrito);
         /* Sintaxis append --> (Jquery) $(selector).append(content,function(index,html)) <--*/
         /* Insertamos html desde el array Js */
         $(".cuerpoCarrito").append('<div clas="row itemCarrito">'+
 
-					'<div class="col-sm-1 col-xs-12">'+
+			'<div class="col-sm-1 col-xs-12">'+
 						
 						'<br>'+
 
 						'<center>'+
 							
-							'<button class="btn btn-default sacarItem backColor" idArticulo="'+item.idArticulo+'">'+
+							'<button id="alfa" class="btn btn-default sacarItem backColor" idArticulo="'+item.idArticulo+'">'+
 								
 								'<i class="fa fa-times"></i>'+
 
@@ -115,7 +120,7 @@ if(localStorage.getItem("listaProductos")!=null){
 
 						'<p>'+
 							
-							'<strong>$ <span>'+Number(item.cantidad)*Number(item.precioMinorista)+'</span></strong>'+
+							'<strong>$ <span>'+(Number(item.cantidad)*Number(item.precioMinorista))+'</span></strong>'+
 
 						'</p>'+
 
@@ -146,9 +151,7 @@ if(localStorage.getItem("listaProductos")!=null){
 /*----------------------------------- */
  
 $(".agregarCarrito").click(function(){
-    alert("iniciando carga carrito");
-
-
+    
     //Todas los datos que vienen en el btn "agregarCarrito" los almacenamos en las variables correspondiente
     var idArticulo = $(this).attr("idArticulo");
     var idcategoria = $(this).attr("idcategoria");
@@ -181,16 +184,16 @@ $(".agregarCarrito").click(function(){
     /*----------------------------------- */
 
 
-    // si la Key : "listaProducto esta vacio -> creamos el array para almacenar el articulo elegido"
+    // si la Key : "listaProducto esta vacio -> creamos el array para almacenar el articulo elegido" "listaCarrito[]"
     if(localStorage.getItem("listaProductos")==null){
         listaCarrito=[];
     }else{
 
-        //si ya tenemos articulos en el carrito, se concatena el nuevo
+        //si ya tenemos articulos en el carrito de local storage, los agregamos al array recien creado "listaCarrito[]"
         listaCarrito.concat(localStorage.getItem("listaProductos"));
     }
 
-    //ahora agregamos el articulo al array para despues crear la key con los values en localStorage
+    //ahora agregamos el articulo al array "listaCarrito[]" para despues crear la key con los values en localStorage
 
     listaCarrito.push({"idArticulo":idArticulo,
     "idcategoria":idcategoria,
@@ -205,11 +208,10 @@ $(".agregarCarrito").click(function(){
     "stock":stock,
     "imagen":imagen,
     "cantidad":"1"});
+    
+    //alamcenamos el array en localStorage "listaProductos" antes se parshea a JSON para poder almacenarlo en ls
 
-    //console.log("listaCarrito", listaCarrito);
-    //alamcenamos el array en localStorage
-
-    localStorage.setItem("listaProductos", JSON.stringify(listaCarrito)); //el array listaCarrito[] lo hacemos un Json para lamacenarlo en el local Storage
+    localStorage.setItem("listaProductos", JSON.stringify(listaCarrito)); //el array listaCarrito[] lo hacemos un Json para almacenarlo en el local Storage
 
 
     /* actualizamos la cuenta de la barra*/
@@ -231,26 +233,31 @@ $(".agregarCarrito").click(function(){
 
 $(".sacarItem").click(function(){
 
-    
-
+    function getId(btn){
+            alert(btn.id);
+            }
+    getId(this);
 
     $(this).parent().parent().parent().remove();// sacamos el item de la vista
+    
 
     //  nombreVariable = $( .nombreClase nombreClaseElemento)
     //se almacena todo lo capturado en un array
-    var idArticulo = $(".cuerpoCarrito button idArticulo");
-    var precioMinorista =  $(this).attr("precioMinorista");
-
-
-    alert(idArticulo);
+    var idArticulo = $(".alfa");
+    //var element =$(".button").html();
+    var precioMinorista = $(this).attr(".cuerpoCarrito .precioCarritoCompra");
+    
+    
+   
+    
     console.log("idArcticulo : ", idArticulo);
+    console.log("$ : ", precioMinorista);
         
         listaCarrito=[]; //vaciamos el array para solo volver a poner los item que realmente quedaron sin el eliminado
 
     //* modificamos local storage la key cantidadCarrito cuando eliminamos un producto del carrito
     var cantidadCarrito = Number($(".cantidadCarrito").html())-1;
     var sumaCarrito = Number($(".sumaCarrito").html())-Number(precioMinorista);
-    
 
    // modificamos el html con los nuevos valores
     $(".cantidadCarrito").html(cantidadCarrito);
@@ -258,8 +265,6 @@ $(".sacarItem").click(function(){
 
     localStorage.setItem("cantidadCarrito", cantidadCarrito);
     localStorage.setItem("sumaCarrito", sumaCarrito);
-    
-    //
 
   //  listaCarrito = [];
 
@@ -311,3 +316,4 @@ $(".sacarItem").click(function(){
 
 
 })
+
